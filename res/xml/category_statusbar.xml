@@ -36,6 +36,4 @@
             android:summary="@string/show_fourg_icon_summary"
             android:defaultValue="false"/>
 
-    </PreferenceCategory>
-
 </PreferenceScreen>
