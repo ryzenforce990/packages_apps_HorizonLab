@@ -23,17 +23,19 @@
         android:summary="@string/network_traffic_state_summary"
         android:fragment="com.horizon.lab.category.NetworkTrafficSettings"
         android:defaultValue="false" />
+            
+        <com.android.settings.custom.preference.SystemSettingSwitchPreference
+            android:key="data_disabled_icon"
+            android:title="@string/data_disabled_icon_title"
+            android:summary="@string/data_disabled_icon_summary"
+            android:defaultValue="true"/>
+            
+        <com.android.settings.custom.preference.SystemSettingSwitchPreference
+            android:key="show_fourg_icon"
+            android:title="@string/show_fourg_icon_title"
+            android:summary="@string/show_fourg_icon_summary"
+            android:defaultValue="false"/>
 
-     <PreferenceCategory
-        android:key="icons_category"
-        android:title="@string/statusbar_icons">
-
-        <Preference
-            android:key="sbbatteryicons"
-            android:title="@string/status_bar_battery_style_title"
-            android:summary="@string/status_bar_battery_style_summary"
-            android:fragment="com.horizon.lab.category.BatteryStyleSettings" />
-        
     </PreferenceCategory>
 
 </PreferenceScreen>
