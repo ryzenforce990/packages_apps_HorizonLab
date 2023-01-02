@@ -45,6 +45,14 @@
         android:summary="@string/lockscreen_enable_power_menu_summary"
         android:defaultValue="true" />
 
+     <Preference
+        android:key="android.theme.customization.lockscreen_clock_font"
+        android:title="@string/theme_customization_lock_clock_title"
+        android:summary="@string/theme_customization_lock_clock_summary"
+        android:fragment="com.superior.lab.fragments.LockClockFonts" />
+
+     </PreferenceCategory>
+
     <PreferenceCategory
           android:title="@string/lockscreen_media_art_category_title">
 
