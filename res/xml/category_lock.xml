@@ -17,6 +17,28 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/category_lock_title" >
 
+     <Preference
+        android:key="lockscreen_preview"
+        settings:layout="@layout/lockscreen_preview" />
+
+     <PreferenceCategory
+        android:title="Custom Lockscreen Clock">
+
+        <com.superior.support.preferences.SystemSettingListPreference
+            android:entries="@array/clock_style_entries"
+            android:title="Custom Clock style"
+            android:key="clock_style"
+            android:defaultValue="0"
+            android:entryValues="@array/clock_style_values" />
+
+        <com.superior.support.preferences.SecureSettingSwitchPreference
+            android:key="lockscreen_double_line_clock_switch"
+            android:title="@string/lockscreen_double_line_clock_setting_toggle"
+            android:summary="@string/lockscreen_double_line_clock_summary"
+            android:defaultValue="false" />
+
+     </PreferenceCategory>
+
     <com.android.settings.custom.preference.SystemSettingSwitchPreference
         android:key="lockscreen_enable_power_menu"
         android:title="@string/lockscreen_enable_power_menu_title"
