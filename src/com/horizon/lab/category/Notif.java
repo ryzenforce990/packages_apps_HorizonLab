@@ -13,67 +13,65 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.horizon.lab;
+package com.horizon.lab.category;
 
+import android.content.ContentResolver;
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
-import android.view.*;
+import android.provider.Settings;
 
-import androidx.preference.*;
-import androidx.recyclerview.widget.*;
-
-import com.android.settings.R;
-import com.android.settings.search.BaseSearchIndexProvider;
-import com.android.settings.SettingsPreferenceFragment;
-import com.android.settingslib.search.SearchIndexable;
+import androidx.preference.ListPreference;
+import androidx.preference.Preference;
+import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.PreferenceScreen;
+import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
+
+import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.search.Indexable;
+import com.android.settingslib.search.SearchIndexable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class HorizonDashboard extends SettingsPreferenceFragment {
-	
-	@Override
-	public void onCreate(Bundle icicle) {
+@SearchIndexable
+public class Notif extends SettingsPreferenceFragment 
+            implements Preference.OnPreferenceChangeListener {
+
+    @Override
+    public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.horizon_dashboard);
+        addPreferencesFromResource(R.xml.category_notif);
+        PreferenceScreen prefSet = getPreferenceScreen();
+        final Resources res = getResources();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
     }
-	
-	@Override
-	public int getMetricsCategory() {
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        return false;
+    }  
+
+    @Override
+    public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.HORIZON;
     }
-	
-	@Override
-	public RecyclerView onCreateRecyclerView(LayoutInflater inflater, ViewGroup container, Bundle icicle) {
-		RecyclerView rcv = super.onCreateRecyclerView(inflater, container, icicle);
-		GridLayoutManager layoutG = new GridLayoutManager(getActivity(), 2);
-		layoutG.setSpanSizeLookup(new SpanSizeLookupG());
-		rcv.setLayoutManager(layoutG);
-		return rcv;
-	}
-	
-	class SpanSizeLookupG extends GridLayoutManager.SpanSizeLookup {
-		@Override
-		public int getSpanSize(int position) {
-		    if (position == 0 || position == 1) {
-				return 2;
-			} else {
-				return 1;
-			}
-		}
-	}
-	
-	public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+    public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
                 @Override
                 public List<SearchIndexableResource> getXmlResourcesToIndex(
                         Context context, boolean enabled) {
                     final SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.horizon_dashboard;
+                    sir.xmlResId = R.xml.category_notif;
                     return Arrays.asList(sir);
                 }
 
@@ -83,5 +81,4 @@ public class HorizonDashboard extends SettingsPreferenceFragment {
                     return keys;
                 }
             };
-	
 }

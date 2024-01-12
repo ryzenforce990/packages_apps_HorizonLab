@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-     Copyright (C) 2020 Project-Awaken
+	<!--
+     Copyright (C) 2024 Horizon-Droid
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -12,40 +12,49 @@
      limitations under the License.
 -->
 <PreferenceScreen
+    android:title="@string/horizon_dashboard_title"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/horizon_dashboard_title" >
-
-    <!-- Statusbar -->
-     <Preference
-          android:id="@+id/statusbar"
-          android:title="@string/category_statusbar_title"
-          android:fragment="com.horizon.lab.category.StatusBar"
-          android:layout="@layout/preference_category_statusbar"
-          />
-
-    <!-- Quick Settings -->
-     <Preference
-          android:id="@+id/quick_settings"
-          android:title="@string/category_quicksettings_title"
-          android:fragment="com.horizon.lab.category.QuickSettings"
-          android:layout="@layout/preference_category_quicksettings"
-          />
-
-    <!-- Misc -->
-     <Preference
-          android:id="@+id/misc"
-          android:title="@string/category_misc_title"
-          android:fragment="com.horizon.lab.category.Misc"
-          android:layout="@layout/preference_category_misc"
-          />
-
-    <!-- Theme -->
-     <Preference
-          android:id="@+id/theme"
-          android:title="@string/category_theme_title"
-          android:fragment="com.horizon.lab.category.Theme"
-          android:layout="@layout/preference_category_theme"
-          />
-
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    
+    <!-- Horizon Header -->
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="hzn_header"
+        android:layout="@layout/hzn_labs_header"
+        settings:controller="com.horizon.lab.HorizonHeaderController" />
+    <PreferenceCategory
+        android:title="Settings Features"
+        settings:layout="@layout/hzn_labs_card_category">
+        
+        <!-- Themes -->
+        <Preference
+            android:icon="@drawable/ic_hzn_themes"
+            android:title="Themes"
+            android:summary="Customize the system themes"
+            android:fragment="com.horizon.lab.category.Theme"
+            settings:layout="@layout/hznlabs_card_left_top" />
+            
+        <!-- Notifications -->
+        <Preference
+            android:icon="@drawable/ic_hzn_notifications"
+            android:title="Notifications"
+            android:summary="Change the notifications area"
+            android:fragment="com.horizon.lab.category.Notif"
+            settings:layout="@layout/hznlabs_card_right_top" />
+            
+        <!-- Lock Screen -->
+        <Preference
+            android:icon="@drawable/ic_hzn_lockscreen"
+            android:title="Lock Screen"
+            android:summary="Lockscreen extra feature"
+            android:fragment="com.horizon.lab.category.Lock"
+            settings:layout="@layout/hznlabs_card_left_bot" />
+            
+        <!-- Miscellaneous -->
+        <Preference
+            android:icon="@drawable/ic_hzn_miscellaneous"
+            android:title="Miscellaneous"
+            android:summary="Some more extra stuff"
+            android:fragment="com.horizon.lab.category.Misc"
+            settings:layout="@layout/hznlabs_card_right_bot" />
+    </PreferenceCategory>
 </PreferenceScreen>

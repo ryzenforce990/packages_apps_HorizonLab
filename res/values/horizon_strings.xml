@@ -40,4 +40,10 @@
     <!-- Category: Theme-->
     <string name="category_theme_title">Themes</string>
 
+    <!-- Category: LockScreen-->
+    <string name="category_lock_title">LockScreen</string>
+
+    <!-- Category: Notifications-->
+    <string name="category_notif_title">Notifications</string>
+
 </resources> 

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:gravity="start"
+    android:background="@android:color/transparent"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:gravity="start"
+        android:orientation="vertical"
+        android:background="@drawable/hzn_card_background_sin"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="190.0dip"
+        android:padding="16.0dip"
+        android:layout_marginStart="8.0dip"
+        android:layout_marginEnd="16.0dip"
+        android:layout_marginBottom="16.0dip">
+        <RelativeLayout
+            android:gravity="start|center_vertical|top"
+            android:layout_width="wrap_content"
+            android:layout_height="0.0dip"
+            android:layout_weight="1.0">
+            <TextView
+                android:ellipsize="marquee"
+                android:id="@android:id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textSize="17.0sp"
+                android:textStyle="bold"
+                android:textColor="?android:attr/textColorPrimary"
+                android:fontFamily="@*android:string/config_headlineFontFamily" />
+            <TextView
+                android:id="@android:id/summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3.0dip"
+                android:maxLines="4"
+                android:alpha="0.7"
+                android:textSize="14.0sp"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textAlignment="viewStart"
+                android:layout_below="@android:id/title"
+                android:layout_alignStart="@android:id/title" />
+        </RelativeLayout>
+        <LinearLayout
+            android:gravity="start|center_vertical|bottom"
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="1.0">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0">
+                <androidx.preference.internal.PreferenceImageView
+                    android:id="@android:id/icon"
+                    android:background="@drawable/declan_adaptive_shape"
+                    android:backgroundTint="?android:colorAccent"
+                    android:tint="?android:colorPrimary"
+                    android:padding="8.0dip"
+                    android:layout_width="44.0dip"
+                    android:layout_height="44.0dip" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
