@@ -16,4 +16,10 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/category_theme_title" >
 
+    <com.android.settings.custom.preference.SecureSettingSwitchPreference
+        android:key="system_black_theme"
+        android:title="@string/system_black_theme_title"
+        android:summary="@string/system_black_theme_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
