@@ -16,4 +16,12 @@
      xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
      android:title="@string/category_statusbar_title" >
 
+     <Preference
+        android:key="network_traffic_state"
+        android:icon="@drawable/ic_settings_network_traffic"
+        android:title="@string/network_traffic_state_title"
+        android:summary="@string/network_traffic_state_summary"
+        android:fragment="com.horizon.lab.category.NetworkTrafficSettings"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
