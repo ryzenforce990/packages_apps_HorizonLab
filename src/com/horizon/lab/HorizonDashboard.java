@@ -16,9 +16,13 @@
 package com.horizon.lab;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.provider.SearchIndexableResource;
-import android.view.*;
 
 import androidx.preference.*;
 import androidx.recyclerview.widget.*;
@@ -27,6 +31,8 @@ import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settingslib.search.SearchIndexable;
+import com.android.settingslib.widget.LayoutPreference;
+import com.google.android.material.card.MaterialCardView;
 
 import com.android.internal.logging.nano.MetricsProto;
 
@@ -34,13 +40,43 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class HorizonDashboard extends SettingsPreferenceFragment {
+public class HorizonDashboard extends SettingsPreferenceFragment implements View.OnClickListener {
+	
+	private LayoutPreference mPreference;
+	private MaterialCardView aboutCard;
+	private LinearLayout quickSettingsCard, statusBarCard;
 	
 	@Override
 	public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.horizon_dashboard);
+        
+        mPreference = findPreference("hzn_header");
+		aboutCard = mPreference.findViewById(R.id.hzn_about_card);
+		quickSettingsCard = mPreference.findViewById(R.id.hzn_qspanel_card);
+		statusBarCard = mPreference.findViewById(R.id.hzn_statusbar_card);
+		
+		aboutCard.setOnClickListener(this);
+		quickSettingsCard.setOnClickListener(this);
+		statusBarCard.setOnClickListener(this);
     }
+    
+    @Override
+	public void onClick(View v) {
+		if (v == aboutCard) {
+			startActivity("AboutTeamActivity");
+		} else if (v == quickSettingsCard) {
+			startActivity("QuickSettingsActivity");
+		} else if (v == statusBarCard) {
+			startActivity("StatusBarActivity");
+		}
+	}
+	
+	private void startActivity(String activity) {
+		Intent intent = new Intent(Intent.ACTION_MAIN);
+		intent.setClassName("com.android.settings", "com.android.settings.Settings$" + activity);
+		getContext().startActivity(intent);
+	}
 	
 	@Override
 	public int getMetricsCategory() {

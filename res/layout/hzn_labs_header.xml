@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     android:gravity="center_vertical"
+    android:background="@android:color/transparent"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:baselineAligned="false"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto" 
     xmlns:androidprv="http://schemas.android.com/apk/prv/res/android">
     <LinearLayout
         android:gravity="center_vertical"
@@ -67,8 +68,8 @@
             <LinearLayout
                 android:gravity="start|center"
                 android:background="@drawable/hzn_card_background_sin"
-                android:id="@+id/hzn_qspanel_card"
                 android:orientation="vertical"
+                android:id="@+id/hzn_qspanel_card"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:paddingHorizontal="16.0dip"

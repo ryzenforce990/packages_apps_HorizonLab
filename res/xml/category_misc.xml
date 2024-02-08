@@ -17,6 +17,12 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/category_misc_title" >
 
+    <com.android.settings.custom.preference.GlobalSettingSwitchPreference
+        android:key="pie_animation_style"
+        android:title="@string/pie_animation_style_title"
+        android:summary="@string/pie_animation_style_summary"
+        android:defaultValue="false" />
+
     <com.android.settings.custom.preference.SystemSettingSwitchPreference
         android:key="advanced_reboot"
         android:title="@string/global_actions_advanced_reboot_title"
