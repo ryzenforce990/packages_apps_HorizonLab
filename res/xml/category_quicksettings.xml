@@ -22,10 +22,4 @@
         android:summary="@string/qstile_requires_unlocking_summary"
         android:defaultValue="true"/>
 
-     <com.android.settings.custom.preference.SystemSettingSwitchPreference
-        android:key="statusbar_colored_icons"
-        android:title="@string/statusbar_colored_icons_title"
-        android:summary="@string/statusbar_colored_icons_summary"
-        android:defaultValue="false" />
-
 </PreferenceScreen>

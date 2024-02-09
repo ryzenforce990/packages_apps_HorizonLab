@@ -17,4 +17,10 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/category_notif_title" >
 
+     <com.android.settings.custom.preference.SystemSettingSwitchPreference
+        android:key="statusbar_colored_icons"
+        android:title="@string/statusbar_colored_icons_title"
+        android:summary="@string/statusbar_colored_icons_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
