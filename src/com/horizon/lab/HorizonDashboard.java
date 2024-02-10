@@ -68,7 +68,7 @@ public class HorizonDashboard extends SettingsPreferenceFragment implements View
 		} else if (v == quickSettingsCard) {
 			startActivity("QuickSettingsActivity");
 		} else if (v == statusBarCard) {
-			startActivity("StatusBarActivity");
+			startActivity("StatusbarActivity");
 		}
 	}
 	
