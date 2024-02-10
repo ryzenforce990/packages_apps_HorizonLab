@@ -97,5 +97,9 @@
     <string name="keygaurd_media_art_summary">Show current playing media\'s album art on lockscreen</string>
     <string name="lockscreen_media_blur_title">Media art blur level</string>
 
+    <!-- Colored QS notification icons -->
+    <string name="qs_colored_icons_title">Colored QS notification icons</string>
+    <string name="qs_colored_icons_summary">Show colored app icon instead of monochrome icons</string>
+
 </resources>
 </resources> 
