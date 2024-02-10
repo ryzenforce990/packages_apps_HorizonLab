@@ -24,14 +24,14 @@
      <PreferenceCategory
         android:title="Custom Lockscreen Clock">
 
-        <com.superior.support.preferences.SystemSettingListPreference
+        <com.android.settings.custom.preference.SystemSettingListPreference
             android:entries="@array/clock_style_entries"
             android:title="Custom Clock style"
             android:key="clock_style"
             android:defaultValue="0"
             android:entryValues="@array/clock_style_values" />
 
-        <com.superior.support.preferences.SecureSettingSwitchPreference
+        <com.android.settings.custom.preference.SecureSettingSwitchPreference
             android:key="lockscreen_double_line_clock_switch"
             android:title="@string/lockscreen_double_line_clock_setting_toggle"
             android:summary="@string/lockscreen_double_line_clock_summary"
