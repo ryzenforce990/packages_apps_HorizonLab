@@ -51,8 +51,6 @@
         android:summary="@string/theme_customization_lock_clock_summary"
         android:fragment="com.superior.lab.fragments.LockClockFonts" />
 
-     </PreferenceCategory>
-
     <PreferenceCategory
           android:title="@string/lockscreen_media_art_category_title">
 
