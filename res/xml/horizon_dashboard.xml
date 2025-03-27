@@ -16,6 +16,11 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/horizon_dashboard_title" >
 
+    <PreferenceScreen
+          android:key="hzn_animation"
+          android:layout="@layout/hzn_banner"
+          android:selectable="false" />
+
     <!-- Statusbar -->
      <Preference
           android:id="@+id/statusbar"
